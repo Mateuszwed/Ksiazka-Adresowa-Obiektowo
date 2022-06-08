@@ -1,27 +1,21 @@
-#include <iostream>
-#include <vector>
-#include <windows.h>
+#ifndef KSIAZKAADRESOWA_H
+#define KSIAZKAADRESOWA_H
 
-#include "Uzytkownik.h"
+#include <iostream>
+
+#include "UzytkownikMenedzer.h"
 
 using namespace std;
 
 class KsiazkaAdresowa{
 
-    int idZalogowanegoUzytkownika;
-    int idOstatniegoAdresata;
-    int idUsunietegoAdresata;
-
-    vector <Uzytkownik> uzytkownicy;
-
-private:
-
-    Uzytkownik podajDaneNowegoUzytkownika();
-    int pobierzIdNowegoUzytkownika();
-    bool czyIstniejeLogin(string login);
+UzytkownikMenedzer uzytkownikMenedzer;
 
 public:
 
-    void rejestracjaUzytkownika();
-    void wypiszWszystkichUzytkownikow();
+void rejestracjaUzytkownika();
+
+
 };
+
+#endif
