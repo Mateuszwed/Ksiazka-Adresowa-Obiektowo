@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1654761811 source:d:\codeblocks\ks-obiektowo\main.cpp
+1654771291 source:d:\codeblocks\ks-obiektowo\main.cpp
 	<iostream>
 	"KsiazkaAdresowa.h"
 
-1654761546 source:d:\codeblocks\ks-obiektowo\ksiazkaadresowa.cpp
+1654773581 source:d:\codeblocks\ks-obiektowo\ksiazkaadresowa.cpp
 	"KsiazkaAdresowa.h"
 
 1654607086 source:d:\codeblocks\ks-obiektowo\uzytkownicy.cpp
 
-1654761569 d:\codeblocks\ks-obiektowo\ksiazkaadresowa.h
+1654773581 d:\codeblocks\ks-obiektowo\ksiazkaadresowa.h
 	<iostream>
 	"UzytkownikMenedzer.h"
 
@@ -28,7 +28,7 @@
 	<iostream>
 	<sstream>
 
-1654761546 d:\codeblocks\ks-obiektowo\uzytkownikmenedzer.h
+1654773596 d:\codeblocks\ks-obiektowo\uzytkownikmenedzer.h
 	<iostream>
 	<vector>
 	<windows.h>
@@ -37,16 +37,16 @@
 	"Uzytkownik.h"
 	"PlikZUzytkownikami.h"
 
-1654698487 source:d:\codeblocks\ks-obiektowo\plikzuzytkownikami.cpp
+1654773228 source:d:\codeblocks\ks-obiektowo\plikzuzytkownikami.cpp
 	"PlikZUzytkownikami.h"
 
-1654762137 d:\codeblocks\ks-obiektowo\plikzuzytkownikami.h
+1654773307 d:\codeblocks\ks-obiektowo\plikzuzytkownikami.h
 	<iostream>
 	<vector>
 	<fstream>
 	"Uzytkownik.h"
 	"MetodyPomocnicze.h"
 
-1654761701 source:d:\codeblocks\ks-obiektowo\uzytkownikmenedzer.cpp
+1654771291 source:d:\codeblocks\ks-obiektowo\uzytkownikmenedzer.cpp
 	"UzytkownikMenedzer.h"
 
