@@ -4,12 +4,14 @@
 #include <iostream>
 
 #include "UzytkownikMenedzer.h"
+#include "AdresatMenedzer.h"
 
 using namespace std;
 
 class KsiazkaAdresowa{
 
 UzytkownikMenedzer uzytkownikMenedzer;
+AdresatMenedzer adresatMenedzer;
 
 public:
 
@@ -17,9 +19,9 @@ public:
     uzytkownikMenedzer.wczytajUzytkownikowZPliku();
     };
 
-void rejestracjaUzytkownika();
-void wyswietlWszyskichUzytkownikow();
 
+void menuGlowneProgramu();
+char wybierzOpcjeZMenuGlownego();
 
 };
 

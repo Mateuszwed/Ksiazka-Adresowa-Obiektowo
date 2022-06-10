@@ -1,16 +1,17 @@
 # depslib dependency file v1.0
-1654771291 source:d:\codeblocks\ks-obiektowo\main.cpp
+1654782056 source:d:\codeblocks\ks-obiektowo\main.cpp
 	<iostream>
 	"KsiazkaAdresowa.h"
 
-1654773581 source:d:\codeblocks\ks-obiektowo\ksiazkaadresowa.cpp
+1654782038 source:d:\codeblocks\ks-obiektowo\ksiazkaadresowa.cpp
 	"KsiazkaAdresowa.h"
 
 1654607086 source:d:\codeblocks\ks-obiektowo\uzytkownicy.cpp
 
-1654773581 d:\codeblocks\ks-obiektowo\ksiazkaadresowa.h
+1654850389 d:\codeblocks\ks-obiektowo\ksiazkaadresowa.h
 	<iostream>
 	"UzytkownikMenedzer.h"
+	"AdresatMenedzer.h"
 
 1654607321 d:\codeblocks\ks-obiektowo\uzytkownicy.h
 	<iostream>
@@ -21,14 +22,14 @@
 1654608828 source:d:\codeblocks\ks-obiektowo\uzytkownik.cpp
 	"Uzytkownik.h"
 
-1654690198 source:d:\codeblocks\ks-obiektowo\metodypomocnicze.cpp
+1654781870 source:d:\codeblocks\ks-obiektowo\metodypomocnicze.cpp
 	"MetodyPomocnicze.h"
 
-1654690198 d:\codeblocks\ks-obiektowo\metodypomocnicze.h
+1654781874 d:\codeblocks\ks-obiektowo\metodypomocnicze.h
 	<iostream>
 	<sstream>
 
-1654773596 d:\codeblocks\ks-obiektowo\uzytkownikmenedzer.h
+1654850421 d:\codeblocks\ks-obiektowo\uzytkownikmenedzer.h
 	<iostream>
 	<vector>
 	<windows.h>
@@ -37,16 +38,33 @@
 	"Uzytkownik.h"
 	"PlikZUzytkownikami.h"
 
-1654773228 source:d:\codeblocks\ks-obiektowo\plikzuzytkownikami.cpp
+1654773813 source:d:\codeblocks\ks-obiektowo\plikzuzytkownikami.cpp
 	"PlikZUzytkownikami.h"
 
-1654773307 d:\codeblocks\ks-obiektowo\plikzuzytkownikami.h
+1654773813 d:\codeblocks\ks-obiektowo\plikzuzytkownikami.h
 	<iostream>
 	<vector>
 	<fstream>
 	"Uzytkownik.h"
 	"MetodyPomocnicze.h"
 
-1654771291 source:d:\codeblocks\ks-obiektowo\uzytkownikmenedzer.cpp
+1654782310 source:d:\codeblocks\ks-obiektowo\uzytkownikmenedzer.cpp
 	"UzytkownikMenedzer.h"
+
+1654778712 source:d:\codeblocks\ks-obiektowo\adresatmenedzer.cpp
+	"AdresatMenedzer.h"
+
+1654777240 source:d:\codeblocks\ks-obiektowo\plikizadresatami.cpp
+
+1654777945 source:d:\codeblocks\ks-obiektowo\adresat.cpp
+	"Adresat.h"
+
+1654777953 d:\codeblocks\ks-obiektowo\adresat.h
+	<iostream>
+
+1654778555 d:\codeblocks\ks-obiektowo\adresatmenedzer.h
+	<iostream>
+	<vector>
+	"Adresat.h"
+	"MetodyPomocnicze.h"
 
