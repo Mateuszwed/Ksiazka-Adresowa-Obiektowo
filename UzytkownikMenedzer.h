@@ -30,6 +30,7 @@ public:
     void rejestracjaUzytkownika();
     void wyswietlWszystkichUzytkownikow();
     int pobierzIdZalogowanegoUzytkownika();
+    int logowanieUzytkownika();
 };
 
 #endif

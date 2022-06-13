@@ -37,7 +37,7 @@ void KsiazkaAdresowa::menuGlowneProgramu()
                 uzytkownikMenedzer.rejestracjaUzytkownika();
                 break;
             case '2':
-                //uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(logowanieUzytkownika());
+                uzytkownikMenedzer.logowanieUzytkownika();
                 break;
             case '9':
                 exit(0);

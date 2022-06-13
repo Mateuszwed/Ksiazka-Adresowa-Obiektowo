@@ -71,3 +71,37 @@ void UzytkownikMenedzer::wyswietlWszystkichUzytkownikow() {
     }
 }
 
+int UzytkownikMenedzer::logowanieUzytkownika(){
+    string login = "", haslo = "";
+
+    cout << endl << "Podaj login: ";
+    cin >> login;
+
+    vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
+    while (itr != uzytkownicy.end())
+    {
+        if (itr -> Uzytkownik::pobierzLogin() == login)
+        {
+            for (int iloscProb = 3; iloscProb > 0; iloscProb--)
+            {
+                cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
+                cin >> haslo;
+
+                if (itr -> Uzytkownik::pobierzHaslo() == haslo)
+                {
+                    cout << endl << "Zalogowales sie." << endl << endl;
+                    system("pause");
+                    return itr -> Uzytkownik::pobierzId();
+                }
+            }
+            cout << "Wprowadzono 3 razy bledne haslo." << endl;
+            system("pause");
+            return 0;
+        }
+        itr++;
+    }
+    cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+    system("pause");
+    return 0;
+}
+

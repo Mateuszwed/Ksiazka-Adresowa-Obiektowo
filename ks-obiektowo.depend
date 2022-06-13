@@ -3,7 +3,7 @@
 	<iostream>
 	"KsiazkaAdresowa.h"
 
-1654782038 source:d:\codeblocks\ks-obiektowo\ksiazkaadresowa.cpp
+1655115026 source:d:\codeblocks\ks-obiektowo\ksiazkaadresowa.cpp
 	"KsiazkaAdresowa.h"
 
 1654607086 source:d:\codeblocks\ks-obiektowo\uzytkownicy.cpp
@@ -29,7 +29,7 @@
 	<iostream>
 	<sstream>
 
-1654850421 d:\codeblocks\ks-obiektowo\uzytkownikmenedzer.h
+1655115026 d:\codeblocks\ks-obiektowo\uzytkownikmenedzer.h
 	<iostream>
 	<vector>
 	<windows.h>
@@ -48,7 +48,7 @@
 	"Uzytkownik.h"
 	"MetodyPomocnicze.h"
 
-1654782310 source:d:\codeblocks\ks-obiektowo\uzytkownikmenedzer.cpp
+1654851068 source:d:\codeblocks\ks-obiektowo\uzytkownikmenedzer.cpp
 	"UzytkownikMenedzer.h"
 
 1654778712 source:d:\codeblocks\ks-obiektowo\adresatmenedzer.cpp
