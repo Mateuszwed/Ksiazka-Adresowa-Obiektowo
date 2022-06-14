@@ -75,16 +75,18 @@ void KsiazkaAdresowa::menuGlowneProgramu()
         }
         else
         {
-            /*
-            if (adresatMenadzer.pobierzAdresaci()->empty() == true)
+
+            if (adresatMenedzer.sprawdzCzyVectorZAdresatamiJestPusty())
             {
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-                adresatMenadzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
+                adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
             }
-*/
+
             wybor = wybierzOpcjeZMenuUzytkownika();
+
+
 
             switch (wybor)
             {
@@ -98,7 +100,7 @@ void KsiazkaAdresowa::menuGlowneProgramu()
                 //adresatMenadzer.wyszukajPoNazwisku();
                 break;
             case '4':
-                //adresatMenadzer.wyswietlWszystkichAdresatow();
+                adresatMenedzer.wyswietlWszystkichAdresatow();
                 break;
             case '5':
                 //adresatMenadzer.ustawIdOstatniegoAdresata(adresatMenadzer.usunAdresata());

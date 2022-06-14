@@ -25,8 +25,11 @@ AdresatMenedzer(string nazwaPlikuZAdresatami) : plikiZAdresatami(nazwaPlikuZAdre
 char wybierzOpcjeZMenuUzytkownika();
 Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
 int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
-Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
 int pobierzZPlikuIdOstatniegoAdresata();
+void wyswietlWszystkichAdresatow();
+void wyswietlDaneAdresata(Adresat adresat);
+bool sprawdzCzyVectorZAdresatamiJestPusty();
+void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
 
 
 };
