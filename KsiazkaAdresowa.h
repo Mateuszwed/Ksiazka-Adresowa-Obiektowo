@@ -15,13 +15,14 @@ AdresatMenedzer adresatMenedzer;
 
 public:
 
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami) {
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), adresatMenedzer(nazwaPlikuZAdresatami) {
     uzytkownikMenedzer.wczytajUzytkownikowZPliku();
     };
 
 
 void menuGlowneProgramu();
 char wybierzOpcjeZMenuGlownego();
+char wybierzOpcjeZMenuUzytkownika();
 
 };
 
