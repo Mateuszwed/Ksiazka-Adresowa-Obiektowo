@@ -20,14 +20,39 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
     return wybor;
 }
 
+char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
+{
+    char wybor;
+
+    system("cls");
+    cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Dodaj adresata" << endl;
+    cout << "2. Wyszukaj po imieniu" << endl;
+    cout << "3. Wyszukaj po nazwisku" << endl;
+    cout << "4. Wyswietl adresatow" << endl;
+    cout << "5. Usun adresata" << endl;
+    cout << "6. Edytuj adresata" << endl;
+    cout << "---------------------------" << endl;
+    cout << "7. Zmien haslo" << endl;
+    cout << "8. Wyloguj sie" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Twoj wybor: ";
+    wybor = MetodyPomocnicze::wczytajZnak();
+
+    return wybor;
+}
+
+
 
 void KsiazkaAdresowa::menuGlowneProgramu()
 {
     char wybor;
+    int idZalogowanegoUzytkownika = 0;
 
     while (true)
     {
-        if (uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika() == 0)
+        if (idZalogowanegoUzytkownika == 0)
         {
             wybor = wybierzOpcjeZMenuGlownego();
 
@@ -37,7 +62,7 @@ void KsiazkaAdresowa::menuGlowneProgramu()
                 uzytkownikMenedzer.rejestracjaUzytkownika();
                 break;
             case '2':
-                uzytkownikMenedzer.logowanieUzytkownika();
+                idZalogowanegoUzytkownika = uzytkownikMenedzer.logowanieUzytkownika();
                 break;
             case '9':
                 exit(0);
@@ -48,9 +73,9 @@ void KsiazkaAdresowa::menuGlowneProgramu()
                 break;
             }
         }
-        /*
         else
         {
+            /*
             if (adresatMenadzer.pobierzAdresaci()->empty() == true)
             {
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
@@ -58,42 +83,41 @@ void KsiazkaAdresowa::menuGlowneProgramu()
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
                 adresatMenadzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
             }
-
+*/
             wybor = wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
             {
             case '1':
-                adresatMenadzer.ustawIdOstatniegoAdresata(adresatMenadzer.dodajAdresata(uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika(), adresatMenadzer.pobierzIdOstatniegoAdresata()));
+                adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika, adresatMenedzer.pobierzZPlikuIdOstatniegoAdresata());
                 break;
             case '2':
-                adresatMenadzer.wyszukajPoImieniu();
+                //adresatMenadzer.wyszukajPoImieniu();
                 break;
             case '3':
-                adresatMenadzer.wyszukajPoNazwisku();
+                //adresatMenadzer.wyszukajPoNazwisku();
                 break;
             case '4':
-                adresatMenadzer.wyswietlWszystkichAdresatow();
+                //adresatMenadzer.wyswietlWszystkichAdresatow();
                 break;
             case '5':
                 //adresatMenadzer.ustawIdOstatniegoAdresata(adresatMenadzer.usunAdresata());
-                adresatMenadzer.usunAdresata(uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
+                //adresatMenadzer.usunAdresata(uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
                 break;
             case '6':
-                adresatMenadzer.edytujAdresata();
+                //adresatMenadzer.edytujAdresata();
                 break;
             case '7':
-                uzytkownikMenadzer.zmianaHaslaUzytkownika();
+                //uzytkownikMenadzer.zmianaHaslaUzytkownika();
                 break;
             case '8':
-                uzytkownikMenadzer.ustawIdZalogowanegoUzytkownika(0);
-                adresatMenadzer.pobierzAdresaci()->clear();
+                //uzytkownikMenadzer.ustawIdZalogowanegoUzytkownika(0);
+                //adresatMenadzer.pobierzAdresaci()->clear();
                 break;
             }
         }
     }
 
-    */
 }
-}
+
 
