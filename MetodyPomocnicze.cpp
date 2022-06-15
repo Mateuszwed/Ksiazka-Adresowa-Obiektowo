@@ -2,15 +2,18 @@
 
 
 
-
 string  MetodyPomocnicze::konwerjsaIntNaString(int liczba) {
+
     ostringstream ss;
     ss << liczba;
     string str = ss.str();
     return str;
 }
 
+
+
 char MetodyPomocnicze::wczytajZnak() {
+
     string wejscie = "";
     char znak  = {0};
 
@@ -26,14 +29,19 @@ char MetodyPomocnicze::wczytajZnak() {
     return znak;
 }
 
+
+
 string MetodyPomocnicze::wczytajLinie() {
+
     string wejscie = "";
     getline(cin, wejscie);
     return wejscie;
 }
 
-string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
-{
+
+
+string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst) {
+
     if (!tekst.empty())
     {
         transform(tekst.begin(), tekst.end(), tekst.begin(), ::tolower);
@@ -42,8 +50,10 @@ string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst
     return tekst;
 }
 
-string MetodyPomocnicze::pobierzLiczbe(string tekst, int pozycjaZnaku)
-{
+
+
+string MetodyPomocnicze::pobierzLiczbe(string tekst, int pozycjaZnaku) {
+
     string liczba = "";
     while(isdigit(tekst[pozycjaZnaku]) == true)
     {
@@ -54,8 +64,9 @@ string MetodyPomocnicze::pobierzLiczbe(string tekst, int pozycjaZnaku)
 }
 
 
-int MetodyPomocnicze::konwersjaStringNaInt(string liczba)
-{
+
+int MetodyPomocnicze::konwersjaStringNaInt(string liczba) {
+
     int liczbaInt;
     istringstream iss(liczba);
     iss >> liczbaInt;

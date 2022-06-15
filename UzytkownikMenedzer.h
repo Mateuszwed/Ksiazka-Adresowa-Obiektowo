@@ -31,6 +31,7 @@ public:
     void wyswietlWszystkichUzytkownikow();
     int pobierzIdZalogowanegoUzytkownika();
     int logowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
 };
 
 #endif

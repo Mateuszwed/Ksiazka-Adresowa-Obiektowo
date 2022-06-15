@@ -8,21 +8,19 @@
 
 using namespace std;
 
-class KsiazkaAdresowa{
+class KsiazkaAdresowa {
 
-UzytkownikMenedzer uzytkownikMenedzer;
-AdresatMenedzer adresatMenedzer;
+    UzytkownikMenedzer uzytkownikMenedzer;
+    AdresatMenedzer adresatMenedzer;
 
 public:
-
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), adresatMenedzer(nazwaPlikuZAdresatami) {
-    uzytkownikMenedzer.wczytajUzytkownikowZPliku();
+        uzytkownikMenedzer.wczytajUzytkownikowZPliku();
     };
 
-
-void menuGlowneProgramu();
-char wybierzOpcjeZMenuGlownego();
-char wybierzOpcjeZMenuUzytkownika();
+    void menuGlowneProgramu();
+    char wybierzOpcjeZMenuGlownego();
+    char wybierzOpcjeZMenuUzytkownika();
 
 };
 
