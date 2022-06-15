@@ -60,13 +60,6 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku() {
 
 
 
-int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika() {
-
-    return idZalogowanegoUzytkownika;
-}
-
-
-
 void UzytkownikMenedzer::wyswietlWszystkichUzytkownikow() {
 
     for(int i = 0; i < uzytkownicy.size(); i++) {
@@ -85,14 +78,14 @@ int UzytkownikMenedzer::logowanieUzytkownika() {
     string login = "", haslo = "";
 
     cout << endl << "Podaj login: ";
-    cin >> login;
+    login = MetodyPomocnicze::wczytajLinie();
 
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     while (itr != uzytkownicy.end()) {
         if (itr -> Uzytkownik::pobierzLogin() == login) {
             for (int iloscProb = 3; iloscProb > 0; iloscProb--) {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-                cin >> haslo;
+                haslo = MetodyPomocnicze::wczytajLinie();
 
                 if (itr -> Uzytkownik::pobierzHaslo() == haslo) {
                     cout << endl << "Zalogowales sie." << endl << endl;

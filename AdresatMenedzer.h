@@ -19,7 +19,6 @@ class AdresatMenedzer {
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami) : plikiZAdresatami(nazwaPlikuZAdresatami) {}
 
-    char wybierzOpcjeZMenuUzytkownika();
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     int pobierzZPlikuIdOstatniegoAdresata();

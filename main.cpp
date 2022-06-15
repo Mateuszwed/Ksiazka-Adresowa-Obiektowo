@@ -7,7 +7,6 @@ using namespace std;
 int main(){
 
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
-    //ksiazkaAdresowa.wyswietlWszyskichUzytkownikow();
 
     ksiazkaAdresowa.menuGlowneProgramu();
 
