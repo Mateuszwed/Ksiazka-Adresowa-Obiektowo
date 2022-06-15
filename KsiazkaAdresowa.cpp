@@ -1,9 +1,8 @@
 #include "KsiazkaAdresowa.h"
 
 
+char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
 
-char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
-{
     char wybor;
 
     system("cls");
@@ -20,22 +19,20 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
     return wybor;
 }
 
-char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
-{
+
+
+char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
+
     char wybor;
 
     system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Dodaj adresata" << endl;
-    cout << "2. Wyszukaj po imieniu" << endl;
-    cout << "3. Wyszukaj po nazwisku" << endl;
-    cout << "4. Wyswietl adresatow" << endl;
-    cout << "5. Usun adresata" << endl;
-    cout << "6. Edytuj adresata" << endl;
+    cout << "2. Wyswietl adresatow" << endl;
     cout << "---------------------------" << endl;
-    cout << "7. Zmien haslo" << endl;
-    cout << "8. Wyloguj sie" << endl;
+    cout << "3. Zmien haslo" << endl;
+    cout << "4. Wyloguj sie" << endl;
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
     wybor = MetodyPomocnicze::wczytajZnak();
@@ -45,19 +42,16 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 
 
 
-void KsiazkaAdresowa::menuGlowneProgramu()
-{
+void KsiazkaAdresowa::menuGlowneProgramu() {
+
     char wybor;
     int idZalogowanegoUzytkownika = 0;
 
-    while (true)
-    {
-        if (idZalogowanegoUzytkownika == 0)
-        {
+    while (true) {
+        if (idZalogowanegoUzytkownika == 0) {
             wybor = wybierzOpcjeZMenuGlownego();
 
-            switch (wybor)
-            {
+            switch (wybor) {
             case '1':
                 uzytkownikMenedzer.rejestracjaUzytkownika();
                 break;
@@ -72,50 +66,30 @@ void KsiazkaAdresowa::menuGlowneProgramu()
                 system("pause");
                 break;
             }
-        }
-        else
-        {
+        } else {
 
-            if (adresatMenedzer.sprawdzCzyVectorZAdresatamiJestPusty())
-            {
-                // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
-                // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
-                // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
+            if (adresatMenedzer.sprawdzCzyVectorZAdresatamiJestPusty()) {
                 adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
             }
 
             wybor = wybierzOpcjeZMenuUzytkownika();
 
 
-
-            switch (wybor)
-            {
+            switch (wybor) {
             case '1':
                 adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika, adresatMenedzer.pobierzZPlikuIdOstatniegoAdresata());
                 break;
             case '2':
-                //adresatMenadzer.wyszukajPoImieniu();
-                break;
-            case '3':
-                //adresatMenadzer.wyszukajPoNazwisku();
-                break;
-            case '4':
                 adresatMenedzer.wyswietlWszystkichAdresatow();
                 break;
-            case '5':
-                //adresatMenadzer.ustawIdOstatniegoAdresata(adresatMenadzer.usunAdresata());
-                //adresatMenadzer.usunAdresata(uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
+            case '3':
+                uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
                 break;
-            case '6':
-                //adresatMenadzer.edytujAdresata();
+            case '4':
+                idZalogowanegoUzytkownika = 0;
+                adresatMenedzer.wyczyscVector();
                 break;
-            case '7':
-                //uzytkownikMenadzer.zmianaHaslaUzytkownika();
-                break;
-            case '8':
-                //uzytkownikMenadzer.ustawIdZalogowanegoUzytkownika(0);
-                //adresatMenadzer.pobierzAdresaci()->clear();
-                break;
+
             }
         }
     }

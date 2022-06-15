@@ -10,26 +10,24 @@
 #include "MetodyPomocnicze.h"
 #include "PlikiZAdresatami.h"
 
-class AdresatMenedzer{
+class AdresatMenedzer {
 
+    vector <Adresat> adresaci;
 
-vector <Adresat> adresaci;
-
-PlikiZAdresatami plikiZAdresatami;
-
+    PlikiZAdresatami plikiZAdresatami;
 
 public:
+    AdresatMenedzer(string nazwaPlikuZAdresatami) : plikiZAdresatami(nazwaPlikuZAdresatami) {}
 
-AdresatMenedzer(string nazwaPlikuZAdresatami) : plikiZAdresatami(nazwaPlikuZAdresatami) {}
-
-char wybierzOpcjeZMenuUzytkownika();
-Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
-int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
-int pobierzZPlikuIdOstatniegoAdresata();
-void wyswietlWszystkichAdresatow();
-void wyswietlDaneAdresata(Adresat adresat);
-bool sprawdzCzyVectorZAdresatamiJestPusty();
-void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    char wybierzOpcjeZMenuUzytkownika();
+    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
+    int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
+    int pobierzZPlikuIdOstatniegoAdresata();
+    void wyswietlWszystkichAdresatow();
+    void wyswietlDaneAdresata(Adresat adresat);
+    bool sprawdzCzyVectorZAdresatamiJestPusty();
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    void wyczyscVector();
 
 
 };
