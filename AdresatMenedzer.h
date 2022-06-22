@@ -16,6 +16,7 @@ class AdresatMenedzer {
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 
     PlikiZAdresatami plikiZAdresatami;
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : plikiZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
@@ -32,7 +33,7 @@ public:
     bool sprawdzCzyVectorZAdresatamiJestPusty();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void wyczyscVector();
-
+    void wyszukajAdresatowPoImieniu();
 
 };
 

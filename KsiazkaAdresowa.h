@@ -27,6 +27,7 @@ class KsiazkaAdresowa {
     void menuNiezalogowanegoUzytkownika();
     void logowanieUzytkownika();
     void wylogowanieUzytkownika();
+    void wyszukajAdresatowPoImieniu();
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami) {
