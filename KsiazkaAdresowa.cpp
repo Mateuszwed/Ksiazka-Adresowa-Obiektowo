@@ -91,9 +91,17 @@ void KsiazkaAdresowa::wylogowanieUzytkownika() {
 
 void KsiazkaAdresowa::wyszukajAdresatowPoImieniu(){
 
-    adresatMenedzer ->wyszukajAdresatowPoImieniu();
+    adresatMenedzer -> wyszukajAdresatowPoImieniu();
 
 }
+
+
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku(){
+
+    adresatMenedzer -> wyszukajAdresatowPoNazwisku();
+
+}
+
 
 void KsiazkaAdresowa::menuNiezalogowanegoUzytkownika() {
 
@@ -126,7 +134,7 @@ void KsiazkaAdresowa::menuZalogowanegoUzytkownika() {
         wyszukajAdresatowPoImieniu();
         break;
     case '3':
-        wyswietlWszystkichAdresatow();
+        wyszukajAdresatowPoNazwisku();
         break;
     case '4':
         wyswietlWszystkichAdresatow();
