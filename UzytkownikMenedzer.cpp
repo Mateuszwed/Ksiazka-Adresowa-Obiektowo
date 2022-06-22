@@ -13,7 +13,6 @@ void UzytkownikMenedzer::rejestracjaUzytkownika() {
 }
 
 
-
 Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika() {
 
     Uzytkownik uzytkownik;
@@ -30,14 +29,12 @@ Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika() {
 }
 
 
-
 int UzytkownikMenedzer::pobierzIdNowegoUzytkownika() {
     if (uzytkownicy.empty() == true)
         return 1;
     else
         return uzytkownicy.back().pobierzId() + 1;
 }
-
 
 
 bool UzytkownikMenedzer::czyIstniejeLogin(string login) {
@@ -53,7 +50,6 @@ bool UzytkownikMenedzer::czyIstniejeLogin(string login) {
 }
 
 
-
 void UzytkownikMenedzer::wyswietlWszystkichUzytkownikow() {
 
     for(int i = 0; i < uzytkownicy.size(); i++) {
@@ -64,7 +60,6 @@ void UzytkownikMenedzer::wyswietlWszystkichUzytkownikow() {
 
     }
 }
-
 
 
 int UzytkownikMenedzer::logowanieUzytkownika() {
@@ -100,13 +95,11 @@ int UzytkownikMenedzer::logowanieUzytkownika() {
 }
 
 
-
 int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika() {
 
     return idZalogowanegoUzytkownika;
 
 }
-
 
 
 void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika) {
@@ -124,7 +117,6 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUz
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
-
 
 
 char UzytkownikMenedzer::wybierzOpcjeZMenuGlownego() {
@@ -145,7 +137,6 @@ char UzytkownikMenedzer::wybierzOpcjeZMenuGlownego() {
 }
 
 
-
 char UzytkownikMenedzer::wybierzOpcjeZMenuUzytkownika() {
 
     system("cls");
@@ -163,6 +154,7 @@ char UzytkownikMenedzer::wybierzOpcjeZMenuUzytkownika() {
     return wybor;
 }
 
+
 bool UzytkownikMenedzer::czyUzytkownikJestZalogowany(){
 
 if(idZalogowanegoUzytkownika > 0){
@@ -174,6 +166,7 @@ if(idZalogowanegoUzytkownika > 0){
     return false;
 
 }
+
 
 void UzytkownikMenedzer::wylogowanieUzytkownika() {
 

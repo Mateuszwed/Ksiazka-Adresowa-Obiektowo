@@ -29,7 +29,6 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, 
 }
 
 
-
 int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata) {
 
     Adresat adresat;
@@ -44,13 +43,11 @@ int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatnie
 }
 
 
-
 int AdresatMenedzer::pobierzZPlikuIdOstatniegoAdresata() {
 
     return plikiZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
 
 }
-
 
 
 void AdresatMenedzer::wyswietlWszystkichAdresatow() {
@@ -71,7 +68,6 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow() {
 }
 
 
-
 void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat) {
 
     cout << endl << "Id:                 " << adresat.pobierzId() << endl;
@@ -83,7 +79,6 @@ void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat) {
 }
 
 
-
 bool AdresatMenedzer::sprawdzCzyVectorZAdresatamiJestPusty() {
     if(adresaci.empty()) {
         return true;
@@ -93,12 +88,10 @@ bool AdresatMenedzer::sprawdzCzyVectorZAdresatamiJestPusty() {
 }
 
 
-
 void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika) {
 
     adresaci = plikiZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }
-
 
 
 void AdresatMenedzer::wyczyscVector() {

@@ -8,12 +8,12 @@ void KsiazkaAdresowa::rejestracjaUzytkownika() {
 }
 
 
-
 int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika() {
 
     return uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
 
 }
+
 
 void KsiazkaAdresowa::logowanieUzytkownika(){
 
@@ -40,13 +40,11 @@ void KsiazkaAdresowa::dodajAdresata() {
 }
 
 
-
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
 
     adresatMenedzer->wyswietlWszystkichAdresatow();
 
 }
-
 
 
 void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku() {
@@ -63,13 +61,11 @@ bool KsiazkaAdresowa::sprawdzCzyVectorZAdresatamiJestPusty() {
 }
 
 
-
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
 
     uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(pobierzIdZalogowanegoUzytkownika());
 
 }
-
 
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
@@ -78,23 +74,19 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
 }
 
 
-
 char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
 
     return uzytkownikMenedzer.wybierzOpcjeZMenuUzytkownika();
 }
 
 
-
 void KsiazkaAdresowa::wylogowanieUzytkownika() {
 
     uzytkownikMenedzer.wylogowanieUzytkownika();
-    //adresatMenedzer->wyczyscVector();
     delete adresatMenedzer;
     adresatMenedzer = NULL;
 
 }
-
 
 
 void KsiazkaAdresowa::menuNiezalogowanegoUzytkownika() {
@@ -118,7 +110,6 @@ void KsiazkaAdresowa::menuNiezalogowanegoUzytkownika() {
 }
 
 
-
 void KsiazkaAdresowa::menuZalogowanegoUzytkownika() {
 
     switch (wybor) {
@@ -137,7 +128,6 @@ void KsiazkaAdresowa::menuZalogowanegoUzytkownika() {
 
     }
 }
-
 
 
 void KsiazkaAdresowa::menuGlowneProgramu() {

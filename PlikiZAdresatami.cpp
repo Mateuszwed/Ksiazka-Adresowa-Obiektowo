@@ -23,7 +23,6 @@ void PlikiZAdresatami::dopiszAdresataDoPliku(Adresat adresat) {
 }
 
 
-
 string PlikiZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat) {
 
     string liniaZDanymiAdresata = "";
@@ -40,7 +39,6 @@ string PlikiZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKr
 }
 
 
-
 bool PlikiZAdresatami::czyPlikJestPusty(fstream &plikTekstowy) {
 
     plikTekstowy.seekg(0, ios::end);
@@ -49,7 +47,6 @@ bool PlikiZAdresatami::czyPlikJestPusty(fstream &plikTekstowy) {
     else
         return false;
 }
-
 
 
 int PlikiZAdresatami::pobierzZPlikuIdOstatniegoAdresata() {
@@ -74,14 +71,12 @@ int PlikiZAdresatami::pobierzZPlikuIdOstatniegoAdresata() {
 }
 
 
-
 int PlikiZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami) {
 
     int pozycjaRozpoczeciaIdAdresata = 0;
     int idAdresata = MetodyPomocnicze::konwersjaStringNaInt(MetodyPomocnicze::pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdAdresata));
     return idAdresata;
 }
-
 
 
 vector<Adresat> PlikiZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika) {
@@ -113,7 +108,6 @@ vector<Adresat> PlikiZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     } else
         return adresaci;
 }
-
 
 
 Adresat PlikiZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami) {
@@ -155,7 +149,6 @@ Adresat PlikiZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePiono
     }
     return adresat;
 }
-
 
 
 int PlikiZAdresatami::pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami) {

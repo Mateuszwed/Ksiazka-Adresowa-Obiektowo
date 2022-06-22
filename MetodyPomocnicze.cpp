@@ -11,7 +11,6 @@ string  MetodyPomocnicze::konwerjsaIntNaString(int liczba) {
 }
 
 
-
 char MetodyPomocnicze::wczytajZnak() {
 
     string wejscie = "";
@@ -30,14 +29,12 @@ char MetodyPomocnicze::wczytajZnak() {
 }
 
 
-
 string MetodyPomocnicze::wczytajLinie() {
 
     string wejscie = "";
     getline(cin, wejscie);
     return wejscie;
 }
-
 
 
 string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst) {
@@ -51,7 +48,6 @@ string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst
 }
 
 
-
 string MetodyPomocnicze::pobierzLiczbe(string tekst, int pozycjaZnaku) {
 
     string liczba = "";
@@ -62,7 +58,6 @@ string MetodyPomocnicze::pobierzLiczbe(string tekst, int pozycjaZnaku) {
     }
     return liczba;
 }
-
 
 
 int MetodyPomocnicze::konwersjaStringNaInt(string liczba) {
