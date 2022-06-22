@@ -54,12 +54,6 @@ bool UzytkownikMenedzer::czyIstniejeLogin(string login) {
 
 
 
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku() {
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
-
-
 void UzytkownikMenedzer::wyswietlWszystkichUzytkownikow() {
 
     for(int i = 0; i < uzytkownicy.size(); i++) {
@@ -90,7 +84,8 @@ int UzytkownikMenedzer::logowanieUzytkownika() {
                 if (itr -> Uzytkownik::pobierzHaslo() == haslo) {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return itr -> Uzytkownik::pobierzId();
+                    idZalogowanegoUzytkownika = itr -> pobierzId();
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -102,6 +97,14 @@ int UzytkownikMenedzer::logowanieUzytkownika() {
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
     return 0;
+}
+
+
+
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika() {
+
+    return idZalogowanegoUzytkownika;
+
 }
 
 
@@ -121,3 +124,60 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUz
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
+
+
+
+char UzytkownikMenedzer::wybierzOpcjeZMenuGlownego() {
+
+
+    system("cls");
+    cout << "    >>> MENU  GLOWNE <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Rejestracja" << endl;
+    cout << "2. Logowanie" << endl;
+    cout << "9. Koniec programu" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Twoj wybor: ";
+
+    wybor = MetodyPomocnicze::wczytajZnak();
+
+    return wybor;
+}
+
+
+
+char UzytkownikMenedzer::wybierzOpcjeZMenuUzytkownika() {
+
+    system("cls");
+    cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Dodaj adresata" << endl;
+    cout << "2. Wyswietl adresatow" << endl;
+    cout << "---------------------------" << endl;
+    cout << "3. Zmien haslo" << endl;
+    cout << "4. Wyloguj sie" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Twoj wybor: ";
+    wybor = MetodyPomocnicze::wczytajZnak();
+
+    return wybor;
+}
+
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany(){
+
+if(idZalogowanegoUzytkownika > 0){
+
+    return true;
+
+}else
+
+    return false;
+
+}
+
+void UzytkownikMenedzer::wylogowanieUzytkownika() {
+
+    idZalogowanegoUzytkownika = 0;
+
+}
+

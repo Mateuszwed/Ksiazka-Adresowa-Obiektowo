@@ -1,99 +1,164 @@
 #include "KsiazkaAdresowa.h"
 
 
+void KsiazkaAdresowa::rejestracjaUzytkownika() {
+
+    uzytkownikMenedzer.rejestracjaUzytkownika();
+
+}
+
+
+
+int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika() {
+
+    return uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
+
+}
+
+void KsiazkaAdresowa::logowanieUzytkownika(){
+
+    uzytkownikMenedzer.logowanieUzytkownika();
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany()){
+
+        adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, pobierzIdZalogowanegoUzytkownika());
+    }
+
+}
+
+
+int KsiazkaAdresowa::pobierzZPlikuIdOstatniegoAdresata() {
+
+    return adresatMenedzer->pobierzZPlikuIdOstatniegoAdresata();
+
+}
+
+
+void KsiazkaAdresowa::dodajAdresata() {
+
+    adresatMenedzer->dodajAdresata(pobierzIdZalogowanegoUzytkownika(), pobierzZPlikuIdOstatniegoAdresata());
+
+}
+
+
+
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
+
+    adresatMenedzer->wyswietlWszystkichAdresatow();
+
+}
+
+
+
+void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku() {
+
+    adresatMenedzer->wczytajAdresatowZalogowanegoUzytkownikaZPliku(pobierzIdZalogowanegoUzytkownika());
+
+}
+
+
+bool KsiazkaAdresowa::sprawdzCzyVectorZAdresatamiJestPusty() {
+
+    return adresatMenedzer->sprawdzCzyVectorZAdresatamiJestPusty();
+
+}
+
+
+
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
+
+    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(pobierzIdZalogowanegoUzytkownika());
+
+}
+
+
+
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
 
-    char wybor;
-
-    system("cls");
-    cout << "    >>> MENU  GLOWNE <<<" << endl;
-    cout << "---------------------------" << endl;
-    cout << "1. Rejestracja" << endl;
-    cout << "2. Logowanie" << endl;
-    cout << "9. Koniec programu" << endl;
-    cout << "---------------------------" << endl;
-    cout << "Twoj wybor: ";
-
-    wybor = MetodyPomocnicze::wczytajZnak();
-
-    return wybor;
+    return uzytkownikMenedzer.wybierzOpcjeZMenuGlownego();
 }
 
 
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
 
-    char wybor;
+    return uzytkownikMenedzer.wybierzOpcjeZMenuUzytkownika();
+}
 
-    system("cls");
-    cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
-    cout << "---------------------------" << endl;
-    cout << "1. Dodaj adresata" << endl;
-    cout << "2. Wyswietl adresatow" << endl;
-    cout << "---------------------------" << endl;
-    cout << "3. Zmien haslo" << endl;
-    cout << "4. Wyloguj sie" << endl;
-    cout << "---------------------------" << endl;
-    cout << "Twoj wybor: ";
-    wybor = MetodyPomocnicze::wczytajZnak();
 
-    return wybor;
+
+void KsiazkaAdresowa::wylogowanieUzytkownika() {
+
+    uzytkownikMenedzer.wylogowanieUzytkownika();
+    //adresatMenedzer->wyczyscVector();
+    delete adresatMenedzer;
+    adresatMenedzer = NULL;
+
+}
+
+
+
+void KsiazkaAdresowa::menuNiezalogowanegoUzytkownika() {
+
+    switch (wybor) {
+    case '1':
+        rejestracjaUzytkownika();
+        break;
+    case '2':
+        logowanieUzytkownika();
+        break;
+    case '9':
+        exit(0);
+        break;
+    default:
+        cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
+        system("pause");
+        break;
+    }
+
+}
+
+
+
+void KsiazkaAdresowa::menuZalogowanegoUzytkownika() {
+
+    switch (wybor) {
+    case '1':
+        dodajAdresata();
+        break;
+    case '2':
+        wyswietlWszystkichAdresatow();
+        break;
+    case '3':
+        zmianaHaslaZalogowanegoUzytkownika();
+        break;
+    case '4':
+        wylogowanieUzytkownika();
+        break;
+
+    }
 }
 
 
 
 void KsiazkaAdresowa::menuGlowneProgramu() {
 
-    char wybor;
-    int idZalogowanegoUzytkownika = 0;
-
     while (true) {
-        if (idZalogowanegoUzytkownika == 0) {
+        if (!uzytkownikMenedzer.czyUzytkownikJestZalogowany()) {
             wybor = wybierzOpcjeZMenuGlownego();
 
-            switch (wybor) {
-            case '1':
-                uzytkownikMenedzer.rejestracjaUzytkownika();
-                break;
-            case '2':
-                idZalogowanegoUzytkownika = uzytkownikMenedzer.logowanieUzytkownika();
-                break;
-            case '9':
-                exit(0);
-                break;
-            default:
-                cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
-                system("pause");
-                break;
-            }
+            menuNiezalogowanegoUzytkownika();
+
         } else {
 
-            if (adresatMenedzer.sprawdzCzyVectorZAdresatamiJestPusty()) {
-                adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+            if (sprawdzCzyVectorZAdresatamiJestPusty()) {
+                wczytajAdresatowZalogowanegoUzytkownikaZPliku();
             }
 
             wybor = wybierzOpcjeZMenuUzytkownika();
+            menuZalogowanegoUzytkownika();
 
-
-            switch (wybor) {
-            case '1':
-                adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika, adresatMenedzer.pobierzZPlikuIdOstatniegoAdresata());
-                break;
-            case '2':
-                adresatMenedzer.wyswietlWszystkichAdresatow();
-                break;
-            case '3':
-                uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
-                break;
-            case '4':
-                idZalogowanegoUzytkownika = 0;
-                adresatMenedzer.wyczyscVector();
-                break;
-
-            }
         }
     }
-
 }
 
 
