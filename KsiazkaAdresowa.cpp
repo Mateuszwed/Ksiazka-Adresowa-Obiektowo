@@ -89,6 +89,20 @@ void KsiazkaAdresowa::wylogowanieUzytkownika() {
 }
 
 
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu(){
+
+    adresatMenedzer -> wyszukajAdresatowPoImieniu();
+
+}
+
+
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku(){
+
+    adresatMenedzer -> wyszukajAdresatowPoNazwisku();
+
+}
+
+
 void KsiazkaAdresowa::menuNiezalogowanegoUzytkownika() {
 
     switch (wybor) {
@@ -117,12 +131,24 @@ void KsiazkaAdresowa::menuZalogowanegoUzytkownika() {
         dodajAdresata();
         break;
     case '2':
-        wyswietlWszystkichAdresatow();
+        wyszukajAdresatowPoImieniu();
         break;
     case '3':
-        zmianaHaslaZalogowanegoUzytkownika();
+        wyszukajAdresatowPoNazwisku();
         break;
     case '4':
+        wyswietlWszystkichAdresatow();
+        break;
+    case '5':
+        wyswietlWszystkichAdresatow();
+        break;
+    case '6':
+        wyswietlWszystkichAdresatow();
+        break;
+    case '7':
+        zmianaHaslaZalogowanegoUzytkownika();
+        break;
+    case '8':
         wylogowanieUzytkownika();
         break;
 
