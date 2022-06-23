@@ -103,6 +103,13 @@ void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku(){
 }
 
 
+void KsiazkaAdresowa::usunAdresata(){
+
+    adresatMenedzer -> usunAdresata();
+
+}
+
+
 void KsiazkaAdresowa::menuNiezalogowanegoUzytkownika() {
 
     switch (wybor) {
@@ -140,7 +147,7 @@ void KsiazkaAdresowa::menuZalogowanegoUzytkownika() {
         wyswietlWszystkichAdresatow();
         break;
     case '5':
-        wyswietlWszystkichAdresatow();
+        usunAdresata();
         break;
     case '6':
         wyswietlWszystkichAdresatow();
