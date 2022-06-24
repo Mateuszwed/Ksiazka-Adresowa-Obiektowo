@@ -8,24 +8,21 @@
 
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
+#include "PlikTekstowy.h"
 
+class PlikiZAdresatami : public PlikTekstowy {
 
-class PlikiZAdresatami {
-
-    const string NAZWA_PLIKU_Z_ADRESATAMI;
-    const string NAZWA_POMOCNICZEGO_PLIKU_Z_ADRESATAMI = "PlikPomocniczy.txt";
-
+    const string NAZWA_PLIKU_POMOCNICZEGO = "PlikPomocniczy.txt";
     int idOstatniegoAdresata;
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 
-    bool czyPlikJestPusty(fstream &plikTekstowy);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
 
 public:
-    PlikiZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami) {};
-
+    PlikiZAdresatami(string nazwaPliku) : PlikTekstowy(nazwaPliku) {};
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
     void usuwanieAdresataZPliku(int idUsuwanegoAdresata);
     void dopiszAdresataDoPliku(Adresat adresat);
     int pobierzZPlikuIdOstatniegoAdresata();
