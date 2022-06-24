@@ -34,7 +34,6 @@ public:
     void wyswietlDaneAdresata(Adresat adresat);
     bool sprawdzCzyVectorZAdresatamiJestPusty();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
-    void wyczyscVector();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
     int usunAdresata();

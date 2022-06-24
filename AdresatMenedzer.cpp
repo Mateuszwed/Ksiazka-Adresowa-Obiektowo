@@ -94,13 +94,6 @@ void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogo
 }
 
 
-void AdresatMenedzer::wyczyscVector() {
-
-    adresaci.clear();
-
-}
-
-
 void AdresatMenedzer::wyswietlIloscWyszukanychAdresatow(int iloscAdresatow){
 
     if (iloscAdresatow == 0)
