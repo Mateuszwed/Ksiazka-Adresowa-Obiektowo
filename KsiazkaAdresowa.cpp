@@ -110,6 +110,13 @@ void KsiazkaAdresowa::usunAdresata(){
 }
 
 
+void KsiazkaAdresowa::edytujAdresata(){
+
+    adresatMenedzer -> edytujAdresata();
+
+}
+
+
 void KsiazkaAdresowa::menuNiezalogowanegoUzytkownika() {
 
     switch (wybor) {
@@ -150,7 +157,7 @@ void KsiazkaAdresowa::menuZalogowanegoUzytkownika() {
         usunAdresata();
         break;
     case '6':
-        wyswietlWszystkichAdresatow();
+        edytujAdresata();
         break;
     case '7':
         zmianaHaslaZalogowanegoUzytkownika();
