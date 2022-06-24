@@ -17,6 +17,7 @@ class AdresatMenedzer {
 
     PlikiZAdresatami plikiZAdresatami;
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+
     int podajIdWybranegoAdresata();
     char wybierzOpcjeZMenuEdycja();
 
